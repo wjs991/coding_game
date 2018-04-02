@@ -9,7 +9,7 @@ import {NgTerminalModule} from 'ng-terminal';
 @NgModule({
     imports: [
         AceEditorModule,
-        NgTerminalModule,
+        //NgTerminalModule,
     ],
     declarations: [
         CodingComponent,

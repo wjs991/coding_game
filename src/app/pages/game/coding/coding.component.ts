@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import{UtilService} from '../../../@core/utils/util.service';
 import {CodingService}from '../../../@core/utils/coding.service';
 import {Code}from '../../../@core/data/code';
-import { TerminalBuffer, keyMap } from 'ng-terminal';
+//import { TerminalBuffer, keyMap } from 'ng-terminal';
 
 import 'brace/index';
 import 'brace/mode/javascript';
@@ -77,7 +77,7 @@ export class CodingComponent {
         this.codingservice.push(this.code,"test")
         .then(code =>{
             console.log(code.raw);
-            this.bf.write(code.raw);
+            //this.bf.write(code.raw);
         });//나중에 username도 받아와야함
        
     }
@@ -86,7 +86,7 @@ export class CodingComponent {
         this.code.code = tttt;
     }
     /////////////////////////terminal
-    public bf: TerminalBuffer;
+    /*public bf: TerminalBuffer;
     public testbf: TerminalBuffer = new TerminalBuffer();
     onInit(bf: TerminalBuffer) {
         this.bf = bf;
@@ -147,6 +147,6 @@ export class CodingComponent {
             this.bf.write(e.key + '');
     }
 
-
+*/
 
 }

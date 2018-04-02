@@ -3,7 +3,7 @@
 <ace-editor
 [(text)]="text"
  id = "editor"    
- style="height:500px; width:100%"
+ style="height:500px; width:100%; font-size:20px;"
  (textChanged)="onChange($event)">
 </ace-editor>
 
@@ -11,10 +11,10 @@
 <button (click)="onCCclick()">java</button>
 <button (click)="submit()">submit</button>
 
-<ng-terminal 
+<!--<ng-terminal 
     (onInit)="onInit($event)" 
     (onKey)="onKey($event)"
     (onCCC)="onCCC($event)"
     style="height:50px; width:100%"
     >
-</ng-terminal>
+</ng-terminal>-->
