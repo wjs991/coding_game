@@ -1,15 +1,64 @@
 <!--component html goes here -->
 <!--component html goes here -->
-<ace-editor
-[(text)]="text"
- id = "editor"    
- style="height:500px; width:100%; font-size:20px;"
- (textChanged)="onChange($event)">
-</ace-editor>
+<div class="row show_grid">
 
+
+    <div class="col-6">
+        <nb-card>
+            <nb-card-header>
+                Game Doc
+            </nb-card-header>
+            <nb-card-body>
+                게임부분 삽입
+            </nb-card-body>
+        </nb-card>
+
+    </div>
+    <div class="col-6">
+        <nb-card>
+            <nb-card-header>
+                <div class="dropdown" ngbDropdown style="position: absolute; right: 40px;">
+                    <button class="btn btn-primary" type="button" ngbDropdownToggle>
+                        {{code.mode}}
+                    </button>
+                    <ul class="dropdown-menu" ngbDropdownMenu>
+                        <!--<li class="dropdown-item" *ngFor="let v of buttonsViews" (click)="this.selectedView = v">{{ v.title }}</li>-->
+                        <li class="dropdown-item" (click)="onC_Click()">c_cpp</li>
+                        <li class="dropdown-item" (click)="onjava_Click()">java</li>
+                        <li class="dropdown-item" (click)="onJs_Click()">js</li>
+                    </ul>
+                </div>
+
+                <span>Code</span>
+            </nb-card-header>
+            <nb-card-body>
+                <ace-editor [(text)]="text" id="editor" style="height:500px; width:100%; font-size:20px;" (textChanged)="onChange($event)">
+                </ace-editor>
+            </nb-card-body>
+        </nb-card>
+
+
+    </div>
+
+
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <nb-card>
+            <nb-card-body>
+                게임 설명......................................... 랭킹............................................ 로그........................................
+            </nb-card-body>
+        </nb-card>
+
+    </div>
+
+</div>
+
+<!--
 <button (click)="onClick()">c언어</button>
 <button (click)="onCCclick()">java</button>
-<button (click)="submit()">submit</button>
+<button (click)="submit()">submit</button>-->
 
 <!--<ng-terminal 
     (onInit)="onInit($event)" 

@@ -47,6 +47,7 @@ export class CodingComponent {
 
     ngOnInit(){
         this.text = "//insert";
+        this.code.mode="javascript";
     }
 
     ngAfterViewInit(){
@@ -55,23 +56,31 @@ export class CodingComponent {
         this.editor.setTheme('ace/theme/monokai');        
         //this.editor.setOptions(this.default_options);
         this.editor.clearSelection();
+        
     }
 
-    onClick(){
+    onC_Click(){
         console.log("C언어");
         this.editor.getSession().setMode('ace/mode/c_cpp');
         //this.editor.setOptions(this.C_CPP_options);
-        this.text ="";
+        this.text ="//c_cpp";
         this.code.mode ="c_cpp";
     }
-    onCCclick(){
+    onjava_Click(){
         console.log("java");
         this.editor.getSession().setMode('ace/mode/java');
         //this.editor.setOptions(this.JAVA_options);
-        this.text = "";
+        this.text = "//java";
         this.code.mode="java";
     }
 
+    onJs_Click(){
+        console.log("java");
+        this.editor.getSession().setMode('ace/mode/javascpript');
+        //this.editor.setOptions(this.JAVA_options);
+        this.text = "//js ---";
+        this.code.mode="java";
+    }
     submit(){
         console.log(this.code);
         this.codingservice.push(this.code,"test")
@@ -85,6 +94,7 @@ export class CodingComponent {
         console.log("sss",tttt);
         this.code.code = tttt;
     }
+
     /////////////////////////terminal
     /*public bf: TerminalBuffer;
     public testbf: TerminalBuffer = new TerminalBuffer();
