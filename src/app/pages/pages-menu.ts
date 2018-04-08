@@ -44,7 +44,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children:[
       {
         title:'coding_test_page',
-        link:'/pages/coding'
+        link:'/pages/game'
+      },
+      {
+        title:'game_list',
+        link:'/pages/game/game-menu'
       }
     ]
   }

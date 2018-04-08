@@ -5,6 +5,7 @@
  */
 
 /* SystemJS module definition */
+declare var ace: any;
 declare var module: NodeModule;
 interface NodeModule {
   id: string;

@@ -12,7 +12,8 @@
       "@nebular/*": [
         "../node_modules/@nebular/*"
       ]
-    }
+    },
+    "experimentalDecorators": true
   },
   "exclude": [
     "test.ts",

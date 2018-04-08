@@ -1,8 +1,7 @@
 <!--component html goes here -->
 <!--component html goes here -->
+
 <div class="row show_grid">
-
-
     <div class="col-6">
         <nb-card>
             <nb-card-header>
@@ -34,13 +33,14 @@
             <nb-card-body>
                 <ace-editor [(text)]="text" id="editor" style="height:500px; width:100%; font-size:20px;" (textChanged)="onChange($event)">
                 </ace-editor>
+                <div>
+                    <button class="btn btn-success btn-rectangle btn-demo" (click)="submit()">submit</button>
+                </div>
+
             </nb-card-body>
         </nb-card>
 
-
     </div>
-
-
 
 </div>
 <div class="row">
@@ -54,6 +54,9 @@
     </div>
 
 </div>
+
+
+
 
 <!--
 <button (click)="onClick()">c언어</button>

@@ -3,15 +3,15 @@ import{UtilService} from '../../../@core/utils/util.service';
 import {CodingService}from '../../../@core/utils/coding.service';
 import {Code}from '../../../@core/data/code';
 //import { TerminalBuffer, keyMap } from 'ng-terminal';
+//import '../../../@core//utils/braceImport.js'
 
 import 'brace/index';
-import 'brace/mode/javascript';
+
 import 'brace/theme/monokai';
-import 'brace/mode/typescript';
+
 import 'brace/theme/eclipse';
-import 'brace/mode/c_cpp';
-import 'brace/mode/java';
-import 'brace/ext/language_tools.js'
+
+import 'brace/ext/language_tools.js';
 declare var ace : any;
 
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
@@ -79,7 +79,7 @@ export class CodingComponent {
         this.editor.getSession().setMode('ace/mode/javascpript');
         //this.editor.setOptions(this.JAVA_options);
         this.text = "//js ---";
-        this.code.mode="java";
+        this.code.mode="javascript";
     }
     submit(){
         console.log(this.code);
