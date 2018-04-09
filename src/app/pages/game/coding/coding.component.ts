@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import{UtilService} from '../../../@core/utils/util.service';
-import {CodingService}from '../../../@core/utils/coding.service';
+//import {CodingService}from '../../../@core/utils/coding.service';
 import {Code}from '../../../@core/data/code';
+import {CodingService} from '../../../@core/utils/coding.service'
 //import { TerminalBuffer, keyMap } from 'ng-terminal';
 //import '../../../@core//utils/braceImport.js'
 
@@ -24,6 +25,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class CodingComponent {
     code: Code = new Code();
     text: string = "";
+    gamename: any;
     public editor;
 
     private default_options:any={
@@ -48,6 +50,7 @@ export class CodingComponent {
     ngOnInit(){
         this.text = "//insert";
         this.code.mode="javascript";
+        this.gamename = this.codingservice.getTitle();
     }
 
     ngAfterViewInit(){
@@ -83,11 +86,11 @@ export class CodingComponent {
     }
     submit(){
         console.log(this.code);
-        this.codingservice.push(this.code,"test")
+        /*this.codingservice.push(this.code,"test")
         .then(code =>{
             console.log(code.raw);
             //this.bf.write(code.raw);
-        });//나중에 username도 받아와야함
+        });//나중에 username도 받아와야함*/
        
     }
     onChange(tttt){

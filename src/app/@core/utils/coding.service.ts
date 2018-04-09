@@ -11,19 +11,38 @@ import { ApiResponse } from './api-response';
 import {Code}from '../data/code';
 const options = {
     responseType: 'json' as 'json'};
+    
+    
+class Game{
+        title : string;
+        Doc : string;
+        Code : string;
+        score : number;
+        //etc
+}
+
 @Injectable()
 export class CodingService{
     private apiBaseUrl = `${environment.apiBaseUrl}/game`;
-    
+    private game: Game = new Game;
     constructor(
         
         private http:HttpClient,
-        private utilService: UtilService
+        private utilService: UtilService,
+       
     ){
 
     }
 
-
+    setTitle(gametitle: any) {
+        console.log("ssss");
+        this.game.title= gametitle;
+        console.log(this.game);
+        
+    }
+    getTitle(){
+        return this.game.title;
+    }
 
     //TODO: 코딩된 파일 보내기 (현재 mode와 파일 한번에)
     push(code: Code,username:String):Promise<any>{

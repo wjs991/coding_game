@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GameService} from '../../../@core/data/game.service'
+import {CodingService}from '../../../@core/utils/coding.service'
 @Component({
     selector: 'game-menu',
     templateUrl: 'game-menu.component.html',
@@ -10,12 +11,18 @@ export class GameMenuComponent implements OnInit {
     games : any;
     constructor(
         private gameservice : GameService,
+        private codingservice : CodingService
     ){
 
     }
     ngOnInit(){
         this.gameservice.getGames()
         .subscribe((games: any)=>this.games = games);
+    }
+
+    nextCompo(name:any){
+        //console.log(name);
+        this.codingservice.setTitle(name);
     }
 
 

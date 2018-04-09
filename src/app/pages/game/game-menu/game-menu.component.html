@@ -9,7 +9,7 @@
                         <div class='col-6'>
                                 {{i.gameDoc}}
                                 <div>
-                                        <a [routerLink]="['/pages/coding']"><button class="btn btn-success btn-rectangle btn-demo" >submit</button></a>
+                                        <a [routerLink]="['/pages/coding']"><button class="btn btn-success btn-rectangle btn-demo" (click)="nextCompo(i.name)">submit</button></a>
                                 </div>
                         </div>
                         <div class='col-6'>

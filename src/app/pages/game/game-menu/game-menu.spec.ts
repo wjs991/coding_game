@@ -3,18 +3,23 @@ import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 
 import{GameMenuComponent} from './game-menu.component';
+import {Codingservice}from '../coding/coding.service';
 
 describe('GameMenuComponent',()=>{
     let component : GameMenuComponent;
     let fixture : ComponentFixture<GameMenuComponent>;
     let de: DebugElement;
     let el: HTMLElement;
-    
+    let codingservice;
+    let codingserviceStub;
     beforeEach(async(()=>{
+        codingserviceStub ={
+            
+        }
         TestBed.configureTestingModule({
             declarations:[GameMenuComponent],
             providers:[{
-                provide:ComponentFixtureAutoDetect,
+                provide:ComponentFixtureAutoDetect,Codingservice,
                 useValue: true
             }]
         })
@@ -46,5 +51,9 @@ describe('GameMenuComponent',()=>{
     console.log(oldTitle);
     // Displayed title is old because Angular didn't hear the change :(
     expect(el.textContent).toContain('Test Title');
+  });
+
+  it('service test',()=>{
+
   });
 })
